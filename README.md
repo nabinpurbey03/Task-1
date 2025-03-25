@@ -85,3 +85,49 @@ b. Deploying the application to make it live using following command
 - Terminal View
 ![Treminal view](./images/docker_pull_successful.png)
 
+# Bash Script to automate all the above process
+<pre>
+#!/bin/bash
+sudo apt update -y
+
+if ! command -v docker &> /dev/null
+then
+    echo "Docker not found! Installing..."
+    sudo apt install -y docker.io
+    sudo systemctl enable docker
+    sudo systemctl start docker
+else
+    echo "Docker is already installed, skipping..."
+fi
+
+if ! command -v nginx &> /dev/null
+then
+    echo "Nginx not found! Installing..."
+    sudo apt install -y nginx
+    sudo systemctl enable nginx
+    sudo systemctl start nginx
+else
+    echo "Nginx is already installed, skipping..."
+fi
+
+NGINX_CONFIG="/etc/nginx/sites-available/default"
+sudo bash -c "cat > $NGINX_CONFIG"
+server {
+    listen 80;
+    server_name _;
+
+    location / {
+        proxy_pass http://localhost:8000;
+        proxy_set_header Host \$host;
+        proxy_set_header X-Real-IP \$remote_addr;
+    }
+}
+EOL
+
+sudo systemctl restart nginx
+
+echo "Server setup completed successfully!"
+</pre>
+- Preview
+![Bash run](./images/bash_run.png)
+
