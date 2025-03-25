@@ -24,6 +24,12 @@ sudo apt-get update
 - Installed the docker packages using following
 <pre>sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin</pre>
 - Now the docker has been successfully installed in our linux machine
+- We can check the docker availability
+<pre>
+docker --vesion
+docker run hello-world
+</pre>
+![Successful Docker Installation](./images/succesful_docker_install.png)
 
 
 
