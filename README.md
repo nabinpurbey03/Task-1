@@ -31,6 +31,16 @@ docker run hello-world
 </pre>
 ![Successful Docker Installation](./images/succesful_docker_install.png)
 
+### c. Installing Nginx
+- Installed Nginx server using following commands
+<pre>
+sudo apt update
+sudo install nginx
+</pre>
+- Successful installation of nginx
+![Web View](./images/active_wed.png)
+</br>
+![Terminal View](./images/actice_server_demo.png)
 
 
 
