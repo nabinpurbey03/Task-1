@@ -42,5 +42,39 @@ sudo install nginx
 - Terminal view
 ![Terminal View](./images/actice_server_demo.png)
 
+## 2. Dependency setup (CI)
+a. Installed Project Dependencies using:
+<pre>npm install</pre>
+
+Dockerfile
+<pre>
+FROM node:20-alpine
+
+WORKDIR /app
+
+COPY package*.json .
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 5173
+
+CMD ["npm", "run", "dev"]
+</pre>
+b. Built the docker image using command
+<pre>dockre build -t react-app</pre>
+- Ran the docker container
+<pre>docker run -p 5173:5173 react-app</pre>
+![Running Docker    Container](./images/running_docker_container.png)
+- Docker Push
+
+<pre>
+docker tag react-app nabinpurney03/ract-app
+docker push nabinpurbey03/react-app
+</pre>
+![Building Docker Container](./images/docker_push.png)
+
+
 
 
