@@ -38,8 +38,8 @@ sudo apt update
 sudo install nginx
 </pre>
 - Successful installation of nginx
-![Web View](./images/active_wed.png)
-</br>
+![Web View](./images/active_wed.png)</br>
+- Terminal view
 ![Terminal View](./images/actice_server_demo.png)
 
 
