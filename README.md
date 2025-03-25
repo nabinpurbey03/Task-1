@@ -131,3 +131,58 @@ echo "Server setup completed successfully!"
 - Preview
 ![Bash run](./images/bash_run.png)
 
+# Github workflow error
+<pre>
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build React App
+        run: npm run build
+        working-directory: ./
+
+      - name: Log in to DockerHub
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin #ERROR
+
+      - name: Build Docker Image
+        run: docker build -t nabinpurbey03/react-app:latest .
+
+      - name: Push Docker Image to DockerHub
+        run: docker push nabinpurbey03/react-app:latest
+
+  deploy:
+    runs-on: self-hosted
+
+    needs: build
+    steps:
+      - name: Pull Latest Docker Image
+        run: docker pull nabinpurbey03/react-app:latest
+
+      - name: Stop and Remove Old Container
+        run: docker rm -f app-react-app || true
+
+      - name: Run New Container
+        run: docker run -d -p 5173:5173 --name react-app nabinpurbey03/react-app:latest
+
+</pre>
+- Preview
+![Workflow error](./images/workflow_error.png)
