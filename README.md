@@ -75,6 +75,13 @@ docker push nabinpurbey03/react-app
 </pre>
 ![Building Docker Container](./images/docker_push.png)
 
-
-
+## 3. Project setup (CD)
+a. Pulling the latest Docker images from the registry using following command
+<pre>docker pull nabinpurbey03/react-app</pre>
+b. Deploying the application to make it live using following command
+<pre>docker run --rm -d -p 5173:5173 nabinpurbey03/react-app</pre>
+- Web View
+![Docker Hosted Web View](./images/website_live.png)
+- Terminal View
+![Treminal view](./images/docker_pull_successful.png)
 
