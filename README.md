@@ -1,4 +1,5 @@
-# Task-1: Writing CI/CD Deployment Task Using GitHub Runner
+# Task-1: Writing CI/CD Deployment Task Using GitHub Runner (Manual Process)
+*Note: Automated script is given after manual process*
 ## 1. Setting up server (Writing a bash script)
 ### a. Setting up docker on a linux machine
 - Created a file named *docker_install.sh*
@@ -85,7 +86,7 @@ b. Deploying the application to make it live using following command
 - Terminal View
 ![Treminal view](./images/docker_pull_successful.png)
 
-# Bash Script to automate all the above process
+# Bash Script to automate all the above process (Automated Script)
 <pre>
 #!/bin/bash
 sudo apt update -y
