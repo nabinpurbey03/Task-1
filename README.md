@@ -187,3 +187,28 @@ jobs:
 </pre>
 - Preview
 ![Workflow error](./images/workflow_error.png)
+---
+# Reference
+[Linux Machine Download](https://ubuntu.com/download)
+</br>
+[Writing a Docker file](https://docs.docker.com/get-started/docker-concepts/building-images/writing-a-dockerfile/)
+</br>
+[Docker Installation in Ununtu Server](https://docs.docker.com/engine/install/ubuntu/)
+</br>
+[Nginx Installation in Ubuntu](https://nginx.org/en/linux_packages.html#Ubuntu)
+</br>
+[Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
+</br>
+[Ansible Ideas](https://docs.ansible.com/?extIdCarryOver=true&sc_cid=701f2000001OH7EAAW)
+</br>
+[Ansible Automation](https://docs.redhat.com/en/documentation/red_hat_ansible_automation_platform/2.5)
+</br>
+[GitHub Actions Tutorial](https://www.youtube.com/watch?v=R8_veQiYBjI)
+</br>
+[Ansible Tutorial](https://www.youtube.com/watch?v=y2TSR7p3N0M)
+</br>
+[Github Workflows Tutorial](https://www.youtube.com/watch?v=ookIfjc8dW0)
+</br>
+[Nginx Configuration Tutorial](https://www.youtube.com/watch?v=C5kMgshNc6g)
+</br>
+`more...`
