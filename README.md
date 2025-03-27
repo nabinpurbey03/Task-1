@@ -211,4 +211,4 @@ jobs:
 </br>
 [Nginx Configuration Tutorial](https://www.youtube.com/watch?v=C5kMgshNc6g)
 </br>
-`more...`
+`...and more`
